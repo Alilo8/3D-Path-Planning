@@ -30,7 +30,7 @@ class Simulator{
         this.initCamera();
         this.initAction();
         this.env = new Env(this.scene, this.start, this.end);
-        [this.obstacles_mesh, this.obstacles] = this.env.initGeometry('NewRandomCubes', 2000);
+        [this.obstacles_mesh, this.obstacles] = this.env.initGeometry('StructuredCubes3', 2000);
     }
     getWinSize(){
         this.winSize = {
@@ -50,11 +50,11 @@ class Simulator{
         const settings = gui.addFolder('Settings');
         const self = this;
         this.props = {
-            Simulation: false,
+            Simulation: true,
             Speed: 100,
-            Env: 'New Random Cubes',
+            Env: 'Structured Cubes 3',
             No_of_obs: 2000,
-            Algo: 'RBT',
+            Algo: 'RRT',
             Apply: function() {
                 self.onApply();
             },
